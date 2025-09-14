@@ -151,12 +151,33 @@ body {
   transform: translateY(-3px);
   box-shadow: 0 0 20px var(--primary), 0 0 40px var(--secondary);
 }
+/* Mobile responsiveness */
 @media (max-width: 768px) {
   .about-container {
     flex-direction: column;
     text-align: center;
+    gap: 1.5rem;
   }
+
+  .about-image img {
+    width: 200px;
+    height: 200px;
+  }
+
   .about-text h2 {
     font-size: 2rem;
   }
+
+  .about-text p {
+    font-size: 1rem;
+  }
+
+  body, .about-section {
+    padding: 1rem;
+  }
 }
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
