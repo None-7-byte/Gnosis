@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+
 :root {
     --primary: #2ecc71;
     --secondary: #3498db;
@@ -11,10 +12,12 @@
     --darker: #16213e;
     --light: #f1f1f1;
 }
+
 body {
     background: url('../image/photo_2025-09-12_23-52-33.jpg') no-repeat center center/cover;
     overflow-x: hidden;
 }
+
 .main-navbar {
     position: fixed;
     top: 0;
@@ -28,25 +31,31 @@ body {
     backdrop-filter: blur(8px);
     z-index: 10;
 }
+
 .logo {
     display: flex;
     align-items: center;
     gap: 0.5rem;
 }
+
 .logo img {
     height: 50px;
     width: 50px;
     border-radius: 80%;
 }
+
 .logo-text {
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
     font-weight: 600;
     color: white;
 }
+
 .nav-links {
     display: flex;
     gap: 1.5rem;
+    flex-wrap: wrap;
 }
+
 .nav-links a {
     color: white;
     text-decoration: none;
@@ -55,13 +64,17 @@ body {
     align-items: center;
     position: relative;
     transition: color 0.3s;
+    font-size: clamp(0.9rem, 3vw, 1rem);
 }
+
 .nav-links a i {
     margin-right: 6px;
 }
+
 .nav-links a:hover {
     color: var(--primary);
 }
+
 .nav-links a::after {
     content: '';
     position: absolute;
@@ -72,9 +85,11 @@ body {
     left: 0;
     transition: width 0.3s ease;
 }
+
 .nav-links a:hover::after {
     width: 100%;
 }
+
 .intro-overlay {
     position: fixed;
     inset: 0;
@@ -86,23 +101,28 @@ body {
     padding: 2rem;
     z-index: 1;
 }
+
 .intro-container {
     color: white;
     max-width: 800px;
+    padding: 1rem;
 }
+
 .centered {
-    font-size: 3.5rem;
+    font-size: clamp(2rem, 6vw, 3.5rem);
     text-align: center;
     margin-bottom: 1rem;
 }
+
 .intro-container p {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 3vw, 1.2rem);
     margin-bottom: 2rem;
     line-height: 1.6;
     color: white;
 }
+
 .intro-video {
-    width: 90%;
+    width: 100%;
     max-width: 900px;
     height: auto;
     display: block;
@@ -110,14 +130,17 @@ body {
     border-radius: 8px;
     box-shadow: 0 0 20px rgba(46, 204, 113, 0.6);
 }
+
 .glow {
     color: #2ecc71;
     text-shadow: 0 0 5px #2ecc71, 0 0 10px #2ecc71, 0 0 20px #2ecc71, 0 0 40px #2ecc71;
     transition: 0.3s;
 }
+
 .glow:hover {
     text-shadow: 0 0 10px var(--darker), 0 0 20px var(--darker), 0 0 30px var(--darker), 0 0 60px var(--darker);
 }
+
 .cta-btn {
     display: inline-block;
     padding: 0.8rem 2rem;
@@ -128,18 +151,24 @@ body {
     text-decoration: none;
     transition: background 0.3s;
     margin-top: 1rem;
+    font-size: clamp(0.9rem, 3vw, 1rem);
 }
+
 .cta-btn:hover {
     background: var(--primary);
 }
-@media (max-width: 480px) {
-    .centered {
-        font-size: 2.5rem;
+
+@media (max-width: 768px) {
+    .main-navbar {
+        flex-direction: column;
+        padding: 1rem;
     }
-    .intro-container p {
-        font-size: 1rem;
+    .nav-links {
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 0.5rem;
     }
-    .intro-video {
-        width: 100%;
+    .intro-overlay {
+        padding: 1rem;
     }
 }
