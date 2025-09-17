@@ -22,6 +22,7 @@ body {
   background: url('../image/photo_2025-09-12_23-52-33.jpg') no-repeat center center/cover;
   background-size: cover;
   overflow-x: hidden;
+  font-size: clamp(14px, 2.5vw, 16px);
 }
 
 .main-navbar {
@@ -88,6 +89,13 @@ body {
   width: 100%;
 }
 
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  color: white;
+  cursor: pointer;
+}
+
 .overlay {
   position: fixed;
   inset: 0;
@@ -104,6 +112,8 @@ body {
   border-radius: 16px;
   width: 100%;
   max-width: 460px;
+  max-height: 90vh;
+  overflow-y: auto;
   padding: 2rem;
   animation: slideUp .3s ease-out;
 }
@@ -135,14 +145,14 @@ header {
 }
 
 h1 {
-  font-size: 1.8rem; 
+  font-size: clamp(1.4rem, 4vw, 1.8rem); 
   margin-bottom: .5rem; 
   color: white;
 }
 .subtitle {
   color: white; 
   margin-bottom: 2rem; 
-  font-size: .95rem;
+  font-size: clamp(.85rem, 2.5vw, .95rem);
 }
 
 .input-group {
@@ -271,12 +281,21 @@ input:focus {
 
 @media (max-width: 768px) {
   .main-navbar {
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     padding: 1rem;
   }
   .nav-links {
+    display: none;
     flex-direction: column;
     gap: 1rem;
+    margin-top: 1rem;
+  }
+  .nav-links.active {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
   }
   .popup-container {
     width: 95%;
